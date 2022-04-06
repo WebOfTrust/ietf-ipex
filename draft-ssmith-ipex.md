@@ -1,6 +1,6 @@
 ---
-title: "TODO - Your title"
-abbrev: "TODO - Abbreviation"
+title: "Issuance and Presentation Exchange Protocol"
+abbrev: "IPEX"
 category: info
 
 docname: draft-ssmith-ipex-latest
@@ -18,9 +18,14 @@ venue:
 
 author:
  -
-    fullname: Your Name Here
-    organization: Your Organization Here
-    email: "sam@samuelsmith.org"
+    fullname: Samuel M. Smith
+    organization: ProSapien LLC
+    email: "sam@prosapien.com"
+ -
+    name: Phil Feairheller
+    organization: GLEIF
+    email: Philip.Feairheller@gleif.org
+
 
 normative:
 
