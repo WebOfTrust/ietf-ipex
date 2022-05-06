@@ -8,7 +8,8 @@
 <meta content="Samuel M. Smith" name="author">
 <meta content="Phil Feairheller" name="author">
 <meta content="
-       TODO Abstract 
+       The Issuance and Presentation Exchange (IPEX) Protocol provides a uniform mechanism for the issuance and presentation of ACDCs   in a securely attributable manner. A single protocol is able to work for both types of exchanges by recognizing that all exchanges (both issuance and presentation) may be modeled as the disclosure of information by a Discloser to a Disclosee. The difference between exchange types is the information disclosed not the mechanism for disclosure. Furthermore, the chaining mechanism of ACDCs and support for both targeted and untargeted ACDCs provide sufficient variability to accommodate the differences in applications or use cases without requiring a difference in the exchange protocol itself. This greatly simplifies the exchange protocol. This simplification has two primary advantages. The first is enhanced security. A well-delimited protocol can be designed and analyzed to minimize and mitigate attack mechanisms. The second is convenience. A standard simple protocol is easier to implement, support, update, understand, and adopt. The tooling is more consistent. 
+       This IPEX   protocol leverages important features of ACDCs and ancillary protocols such as CESR  , SAIDs  , and CESR-Proofs   as well as Ricardian contracts   and graduated disclosure (partial, selective, full) to enable contractually protected disclosure. Contractually protected disclosure includes both chain-link confidential   and contingent disclosure  . 
     " name="description">
 <meta content="xml2rfc 3.12.5" name="generator">
 <meta content="Internet-Draft" name="keyword">
@@ -1053,7 +1054,8 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 <h1 id="title">Issuance and Presentation Exchange Protocol</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">TODO Abstract<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">The Issuance and Presentation Exchange (IPEX) Protocol provides a uniform mechanism for the issuance and presentation of ACDCs <span>[<a href="#ACDC_ID" class="xref">ACDC_ID</a>]</span> in a securely attributable manner. A single protocol is able to work for both types of exchanges by recognizing that all exchanges (both issuance and presentation) may be modeled as the disclosure of information by a Discloser to a Disclosee. The difference between exchange types is the information disclosed not the mechanism for disclosure. Furthermore, the chaining mechanism of ACDCs and support for both targeted and untargeted ACDCs provide sufficient variability to accommodate the differences in applications or use cases without requiring a difference in the exchange protocol itself. This greatly simplifies the exchange protocol. This simplification has two primary advantages. The first is enhanced security. A well-delimited protocol can be designed and analyzed to minimize and mitigate attack mechanisms. The second is convenience. A standard simple protocol is easier to implement, support, update, understand, and adopt. The tooling is more consistent.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-2">This IPEX <span>[<a href="#IPEX_ID" class="xref">IPEX_ID</a>]</span> protocol leverages important features of ACDCs and ancillary protocols such as CESR <span>[<a href="#CESR_ID" class="xref">CESR_ID</a>]</span>, SAIDs <span>[<a href="#SAID_ID" class="xref">SAID_ID</a>]</span>, and CESR-Proofs <span>[<a href="#Proof_ID" class="xref">Proof_ID</a>]</span> as well as Ricardian contracts <span>[<a href="#RC" class="xref">RC</a>]</span> and graduated disclosure (partial, selective, full) to enable contractually protected disclosure. Contractually protected disclosure includes both chain-link confidential <span>[<a href="#CLC" class="xref">CLC</a>]</span> and contingent disclosure <span>[<a href="#ACDC_ID" class="xref">ACDC_ID</a>]</span>.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1377,13 +1379,21 @@ appear in all capitals, as shown here.<a href="#section-3-1" class="pilcrow">¶<
 <a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
+<dt id="CLC">[CLC]</dt>
+        <dd>
+<span class="refTitle">"Chain-Link Confidentiality"</span>, <span>n.d.</span>, <span>&lt;<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2045818">https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2045818</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="IDSys">[IDSys]</dt>
         <dd>
 <span class="refTitle">"Identity System Essentials"</span>, <span>n.d.</span>, <span>&lt;<a href="https://github.com/SmithSamuelM/Papers/blob/master/whitepapers/Identity-System-Essentials.pdf">https://github.com/SmithSamuelM/Papers/blob/master/whitepapers/Identity-System-Essentials.pdf</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="KERI">[KERI]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Smith, S.</span>, <span class="refTitle">"Key Event Receipt Infrastructure (KERI)"</span>, <time datetime="2021" class="refDate">2021</time>, <span>&lt;<a href="https://arxiv.org/abs/1907.02143">https://arxiv.org/abs/1907.02143</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RC">[RC]</dt>
+      <dd>
+<span class="refTitle">"Ricardian Contract"</span>, <span>n.d.</span>, <span>&lt;<a href="https://en.wikipedia.org/wiki/Ricardian_contract">https://en.wikipedia.org/wiki/Ricardian_contract</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
