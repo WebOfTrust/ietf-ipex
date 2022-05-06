@@ -29,7 +29,149 @@ author:
 
 normative:
 
+  IPEX_ID:
+    target: https://github.com/WebOfTrust/ietf-oobi
+    title: IETF IPEX (Issuance and Presentation EXchange) Prototocol Internet Draft
+    author:
+      -
+        ins: S. Smith
+        name: Samuel M. Smith
+        org: ProSapien LLC
+      -
+        name: Phil Feairheller
+        organization: GLEIF
+        email: Philip.Feairheller@gleif.org
+    date: 2022
+
+  ACDC_ID:
+    target: https://github.com/trustoverip/tswg-acdc-specification
+    title: IETF ACDC (Authentic Chained Data Containers) Internet Draft
+    author:
+      ins: S. Smith
+      name: Samuel M. Smith
+      org: ProSapien LLC
+    date: 2022
+
+  OOBI_ID:
+    target: https://github.com/WebOfTrust/ietf-oobi
+    title: IETF OOBI (Out-Of-Band-Introduction) Internet Draft
+    author:
+      ins: S. Smith
+      name: Samuel M. Smith
+      org: ProSapien LLC
+    date: 2022
+
+  KERI_ID:
+    target: https://github.com/WebOfTrust/ietf-keri
+    title: IETF KERI (Key Event Receipt Infrastructure) Internet Draft
+    author:
+      ins: S. Smith
+      name: Samuel M. Smith
+      org: ProSapien LLC
+    date: 2022
+    
+  SAID_ID:
+    target: https://github.com/WebOfTrust/ietf-said
+    title: IETF SAID (Self-Addressing IDentifier) Internet Draft
+    author:
+      ins: S. Smith
+      name: Samuel M. Smith
+      org: ProSapien LLC
+    date: 2022
+    
+  CESR_ID:
+    target: https://github.com/WebOfTrust/ietf-cesr
+    title: IETF CESR (Composable Event Streaming Representation) Internet Draft
+    author:
+      ins: S. Smith
+      name: Samuel M. Smith
+      org: ProSapien LLC
+    date: 2022
+    
+  PTEL_ID:
+    target: https://github.com/WebOfTrust/ietf-ptel
+    title: IETF PTEL (Public Transaction Event Log) Internet Draft
+    author:
+      ins: P. Feairheller
+      name: Phil Feairheller
+      org: GLEIF
+    date: 2022
+    
+  Proof_ID:
+    target: https://github.com/WebOfTrust/ietf-cesr-proof
+    title: IETF CESR-Proof Internet Draft
+    author:
+      ins: P. Feairheller
+      name: Phil Feairheller
+      org: GLEIF
+    date: 2022
+
+  DIDK_ID:
+    target: https://github.com/WebOfTrust/ietf-did-keri
+    title: IETF DID-KERI Internet Draft
+    author:
+      ins: P. Feairheller
+      name: Phil Feairheller
+      org: GLEIF
+    date: 2022
+
+  JSON:
+    target: https://www.json.org/json-en.html
+    title: JavaScript Object Notation Delimeters
+    
+  RFC8259:
+    target: https://datatracker.ietf.org/doc/html/rfc8259
+    title: JSON (JavaScript Object Notation)
+    
+  RFC4627:
+    target: https://datatracker.ietf.org/doc/rfc4627/
+    title: The application/json Media Type for JavaScript Object Notation (JSON)
+
+  CBOR:
+    target: https://en.wikipedia.org/wiki/CBOR
+    title: CBOR Mapping Object Codes
+    
+  RFC8949:
+    target: https://datatracker.ietf.org/doc/rfc8949/
+    title: Concise Binary Object Representation (CBOR)
+    author:
+      -
+        ins: C. Bormann
+        name: Carsten Bormann
+      -
+        ins: P. Hoffman
+        name: Paul Hoffman
+    date: 2020-12-04
+    
+  MGPK:
+    target: https://github.com/msgpack/msgpack/blob/master/spec.md
+    title: Msgpack Mapping Object Codes
+
+  JSch:
+    target: https://json-schema.org
+    title: JSON Schema
+    
+  JSch_202012:
+    target: https://json-schema.org/draft/2020-12/release-notes.html
+    title: "JSON Schema 2020-12"
+  
+
+
 informative:
+
+  KERI:
+    target: https://arxiv.org/abs/1907.02143
+    title: Key Event Receipt Infrastructure (KERI)
+    author:
+      ins: S. Smith
+      name: Samuel M. Smith
+      org: ProSapien LLC
+    date: 2021
+
+  IDSys:
+    target: https://github.com/SmithSamuelM/Papers/blob/master/whitepapers/Identity-System-Essentials.pdf
+    title: Identity System Essentials 
+
 
 
 --- abstract
@@ -42,6 +184,23 @@ TODO Abstract
 # Introduction
 
 TODO Introduction
+
+
+
+# Exchange Protocol
+
+| Discloser | Disclosee | Initiate | Contents |  Description |
+|:-:|:-:|:-:|:--|:--|
+| | `apply`| Y | schema or its SAID, attribute field label list, signature on `apply` or its SAID | schema SAID is type of ACDC, optional label list for selective disclosure, CESR-Proof signature|
+|`spurn`|  | N | |rejects `apply` |
+|`offer`|  | Y | metadata ACDC or its SAID, signature on `offer` or its SAID  | includes schema or its SAID, other partial disclosures, selective disclosure label list, CESR-Proof signature |
+| | `spurn` | N | |rejects `offer` |
+| | `agree`| N | signature on `offer` or its SAID | CESR-Proof signature |
+|`spurn`|  | N | |rejects `agree` |
+|`grant`|  | N | full or selective disclosure ACDC, signature on `grant` or its SAID  | includes attribute values, CESR-Proof signature |
+|| `admit` | N | signature on `grant` or its SAID  | CESR-Proof signature |
+
+
 
 
 # Conventions and Definitions
