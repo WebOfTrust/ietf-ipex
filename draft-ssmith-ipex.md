@@ -197,7 +197,7 @@ TODO Introduction
 | | `spurn` | N | |rejects `offer` |
 | | `agree`| N | signature on `offer` or its SAID | CESR-Proof signature |
 |`spurn`|  | N | |rejects `agree` |
-|`grant`|  | N | full or selective disclosure ACDC, signature on `grant` or its SAID  | includes attribute values, CESR-Proof signature |
+|`grant`|  | Y | full or selective disclosure ACDC, signature on `grant` or its SAID  | includes attribute values, CESR-Proof signature |
 || `admit` | N | signature on `grant` or its SAID  | CESR-Proof signature |
 
 
