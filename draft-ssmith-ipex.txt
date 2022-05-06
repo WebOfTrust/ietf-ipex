@@ -113,7 +113,7 @@ Table of Contents
    +-----------+-----------+----------+-------------+------------------+
    |   spurn   |           |    N     |             | rejects agree    |
    +-----------+-----------+----------+-------------+------------------+
-   |   grant   |           |    N     | full or     | includes         |
+   |   grant   |           |    Y     | full or     | includes         |
    |           |           |          | selective   | attribute        |
    |           |           |          | disclosure  | values, CESR-    |
    |           |           |          | ACDC,       | Proof signature  |
