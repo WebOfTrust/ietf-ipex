@@ -5,8 +5,8 @@
 WG Working Group                                             S. M. Smith
 Internet-Draft                                             ProSapien LLC
 Intended status: Informational                            P. Feairheller
-Expires: 28 February 2023                                          GLEIF
-                                                          27 August 2022
+Expires: 1 March 2023                                              GLEIF
+                                                          28 August 2022
 
 
               Issuance and Presentation Exchange Protocol
@@ -16,7 +16,7 @@ Abstract
 
    The Issuance and Presentation Exchange (IPEX) Protocol provides a
    uniform mechanism for the issuance and presentation of ACDCs
-   [ACDC_ID] in a securely attributable manner.  A single protocol is
+   [ACDC-ID] in a securely attributable manner.  A single protocol is
    able to work for both types of exchanges by recognizing that all
    exchanges (both issuance and presentation) may be modeled as the
    disclosure of information by a Discloser to a Disclosee.  The
@@ -32,13 +32,13 @@ Abstract
    A standard simple protocol is easier to implement, support, update,
    understand, and adopt.  The tooling is more consistent.
 
-   This IPEX [IPEX_ID] protocol leverages important features of ACDCs
-   and ancillary protocols such as CESR [CESR_ID], SAIDs [SAID_ID], and
-   CESR-Proofs [Proof_ID] as well as Ricardian contracts [RC] and
+   This IPEX [IPEX-ID] protocol leverages important features of ACDCs
+   and ancillary protocols such as CESR [CESR-ID], SAIDs [SAID-ID], and
+   CESR-Proofs [Proof-ID] as well as Ricardian contracts [RC] and
    graduated disclosure (partial, selective, full) to enable
    contractually protected disclosure.  Contractually protected
    disclosure includes both chain-link confidential [CLC] and contingent
-   disclosure [ACDC_ID].
+   disclosure [ACDC-ID].
 
 About This Document
 
@@ -70,7 +70,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 28 February 2023.
+   This Internet-Draft will expire on 1 March 2023.
 
 Copyright Notice
 
@@ -89,16 +89,18 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction
-   2.  Exchange Protocol
-     2.1.  Discussion
-     2.2.  IPEX Validation
-       2.2.1.  Issuer Signing Rules
-   3.  Conventions and Definitions
-   4.  Security Considerations
-   5.  IANA Considerations
-   6.  References
-     6.1.  Normative References
-     6.2.  Informative References
+   2.  Terminology
+     2.1.  Chain-Link Confidentiality
+   3.  Exchange Protocol
+     3.1.  Discussion
+     3.2.  IPEX Validation
+       3.2.1.  Issuer Signing Rules
+   4.  Conventions and Definitions
+   5.  Security Considerations
+   6.  IANA Considerations
+   7.  References
+     7.1.  Normative References
+     7.2.  Informative References
    Acknowledgments
    Authors' Addresses
 
@@ -106,7 +108,27 @@ Table of Contents
 
    TODO Introduction
 
-2.  Exchange Protocol
+2.  Terminology
+
+2.1.  Chain-Link Confidentiality
+
+   Disclosures via Presentations Exchanges may be contractually
+   protected by Chain-Link Confidentiality (i.e a Chain-Link
+   Confidential disclosure).  The chaining in this case is different
+   from the chaining described above between Issuances in a DAG of
+   chained Issuances.  Chain-link confidentiality, in contrast, chains
+   together a sequence of Disclosees.  Each Disclosee in the sequence in
+   turn is the Discloser to the next Disclosee.  The terms-of-use of the
+   original disclosure as applied to the original Disclosee MUST be
+   applied by each subsequent Discloser to each subsequent Disclosee via
+   each of the subsequent disclosures (presentation exchanges).  These
+   terms-of-use typically constrain disclosure to only approved parties,
+   i.e. imbue the chain of disclosures with some degree of
+   confidentiality.  These terms-of-use are meant to contractually
+   protect the data rights of the original Issuer or Issuee of the data
+   being disclosed.
+
+3.  Exchange Protocol
 
    +===========+===========+==========+=============+==================+
    | Discloser | Disclosee | Initiate | Contents    | Description      |
@@ -155,7 +177,7 @@ Table of Contents
 
                                   Table 1
 
-2.1.  Discussion
+3.1.  Discussion
 
    All the variants of an ACDC are various degrees of expansion of the
    compact variant.  Therefore, an Issuer commitment via a signature to
@@ -226,7 +248,7 @@ Table of Contents
    enabled (via schema composition) variants that the Discloser offered
    to disclose as part of the graduated disclosure process.
 
-2.2.  IPEX Validation
+3.2.  IPEX Validation
 
    The goal is to define a validation process (set of rules) that works
    for all variants of an ACDC and for all types of graduated disclosure
@@ -244,7 +266,7 @@ Table of Contents
    minimizing the computation of large numbers of bulk issued
    signatures.
 
-2.2.1.  Issuer Signing Rules
+3.2.1.  Issuer Signing Rules
 
    The Issuer MUST provide a signature on the SAID of the most compact
    form defined by the schema of the ACDC . To restate, when only one
@@ -271,7 +293,7 @@ Table of Contents
    verify a different proof of disclosure for each disclosed variant as
    defined above.
 
-3.  Conventions and Definitions
+4.  Conventions and Definitions
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
@@ -279,33 +301,33 @@ Table of Contents
    BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
-4.  Security Considerations
+5.  Security Considerations
 
    TODO Security
 
-5.  IANA Considerations
+6.  IANA Considerations
 
    This document has no IANA actions.
 
-6.  References
+7.  References
 
-6.1.  Normative References
+7.1.  Normative References
 
-   [ACDC_ID]  Smith, S., "IETF ACDC (Authentic Chained Data Containers)
+   [ACDC-ID]  Smith, S., "IETF ACDC (Authentic Chained Data Containers)
               Internet Draft", 2022,
               <https://github.com/trustoverip/tswg-acdc-specification>.
 
    [CBOR]     "CBOR Mapping Object Codes", n.d.,
               <https://en.wikipedia.org/wiki/CBOR>.
 
-   [CESR_ID]  Smith, S., "IETF CESR (Composable Event Streaming
+   [CESR-ID]  Smith, S., "IETF CESR (Composable Event Streaming
               Representation) Internet Draft", 2022,
               <https://github.com/WebOfTrust/ietf-cesr>.
 
-   [DIDK_ID]  Feairheller, P., "IETF DID-KERI Internet Draft", 2022,
+   [DIDK-ID]  Feairheller, P., "IETF DID-KERI Internet Draft", 2022,
               <https://github.com/WebOfTrust/ietf-did-keri>.
 
-   [IPEX_ID]  Smith, S. and P. Feairheller, "IETF IPEX (Issuance and
+   [IPEX-ID]  Smith, S. and P. Feairheller, "IETF IPEX (Issuance and
               Presentation EXchange) Prototocol Internet Draft", 2022,
               <https://github.com/WebOfTrust/ietf-oobi>.
 
@@ -318,20 +340,20 @@ Table of Contents
    [JSON]     "JavaScript Object Notation Delimeters", n.d.,
               <https://www.json.org/json-en.html>.
 
-   [KERI_ID]  Smith, S., "IETF KERI (Key Event Receipt Infrastructure)
+   [KERI-ID]  Smith, S., "IETF KERI (Key Event Receipt Infrastructure)
               Internet Draft", 2022,
               <https://github.com/WebOfTrust/ietf-keri>.
 
    [MGPK]     "Msgpack Mapping Object Codes", n.d.,
               <https://github.com/msgpack/msgpack/blob/master/spec.md>.
 
-   [OOBI_ID]  Smith, S., "IETF OOBI (Out-Of-Band-Introduction) Internet
+   [OOBI-ID]  Smith, S., "IETF OOBI (Out-Of-Band-Introduction) Internet
               Draft", 2022, <https://github.com/WebOfTrust/ietf-oobi>.
 
-   [Proof_ID] Feairheller, P., "IETF CESR-Proof Internet Draft", 2022,
+   [Proof-ID] Feairheller, P., "IETF CESR-Proof Internet Draft", 2022,
               <https://github.com/WebOfTrust/ietf-cesr-proof>.
 
-   [PTEL_ID]  Feairheller, P., "IETF PTEL (Public Transaction Event Log)
+   [PTEL-ID]  Feairheller, P., "IETF PTEL (Public Transaction Event Log)
               Internet Draft", 2022,
               <https://github.com/WebOfTrust/ietf-ptel>.
 
@@ -355,11 +377,11 @@ Table of Contents
               Representation (CBOR)", 4 December 2020,
               <https://datatracker.ietf.org/doc/rfc8949/>.
 
-   [SAID_ID]  Smith, S., "IETF SAID (Self-Addressing IDentifier)
+   [SAID-ID]  Smith, S., "IETF SAID (Self-Addressing IDentifier)
               Internet Draft", 2022,
               <https://github.com/WebOfTrust/ietf-said>.
 
-6.2.  Informative References
+7.2.  Informative References
 
    [CLC]      "Chain-Link Confidentiality", n.d.,
               <https://papers.ssrn.com/sol3/
