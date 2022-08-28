@@ -211,37 +211,37 @@ TODO Introduction
 # Terminology
 
 Presentation Exchange
-: a disclosure of one or more ***issuances**** between a ***Discloser**** and a ***Disclosee****.
+: An exchange that provides disclosure of one or more ACDCs between a ***Discloser**** and a ***Disclosee****.
 
 A presentation exchange is the process by which authenticatable information may be exchanged between two parties, namely, the *Discloser* and *Disclosee*.
 
 Discloser
-: Disclosure is *disclosed by* the *Discloser*.
+: An ACDC in a disclosure is *disclosed by* the *Discloser*.
 
 Disclosee
-: Disclosure is *disclosed to* the *Disclosee*.
+: A ACDC in a disclosure is *disclosed to* the *Disclosee*.
 
-Issuance
-: Concretely defined by an ACDC {{ACDC-ID}}.
+ACDC
+: Type of issuance concretely defined by the ACDC specification {{ACDC-ID}}.
 
 Issuer
-: Issuance is *issued by* the *Issuer*. The *Issuer* identifier (AID) appears in the top level of the ACDC.
+: An *ACDC* is *issued by* the *Issuer*. The *Issuer* identifier (AID) appears in the top level of the ACDC.
 
 Issuee
-: Issuance is optionally *issued to* the *Issuee*. When present, the *Issuee* identifier (AID)  appears at the top level of the attribute section or in the attribute list at the top level of the attribute aggregate section of the AID.
+: An *ACDC* is optionally *issued to* the *Issuee*. When present, the *Issuee* identifier (AID)  appears at the top level of the attribute section or in the attribute list at the top level of the attribute aggregate section of the ACDC.
 
-Each *issuance* Must have an *Issuer* and May have an *Issuee*.
+Each *ACDC* is a type of issuance that MUST have an *Issuer* and MAY have an *Issuee*.
 
-The set of *issuances* (ACDCs) so disclosed in a *presentation exchange* MUST be chained. This set of chained *issuances* define a directed acyclic graph (DAG) that MUST have at least one vertex and MAY have zero or more edges pointing to other vertices.
+The set of *ACDCs* so disclosed in a *presentation exchange* MUST be chained. This set of chained *ACDCs* define a directed acyclic graph (DAG) that MUST have at least one vertex and MAY have zero or more edges pointing to other vertices.
 
-Each *issuance* (ACDC) itself defines a graph fragment consisting of one vertex and zero or more directed edges. Each directed edge contained in an *issuance* points to a vertex contained in another *issuance*. The *issuance* that contains the origin vertex of the DAG is called the *origin* or *primary* *issuance* (ACDC) of the *presentation exchange*.
+Each *ACDC* itself defines a graph fragment consisting of one vertex and zero or more directed edges. Each directed edge contained in an *ACDC* points to a vertex contained in another *ACDC*. The ACDC that contains the origin vertex of the DAG is called the *origin* or *primary* ACDC of the *presentation exchange*.
 
 The disclosure performed by a presentation exchange MAY be *graduated* and MAY be *contractually protected*.
 
 Issuance Exchange
-: A special case of a *presentation exchange* where the *Discloser* is the *Issuer* of the *origin* (Primary) *issuance* (ACDC) of the DAG formed by the set of chained *issuances* so disclosed.
+: A special case of a *presentation exchange* where the *Discloser* is the *Issuer* of the *origin* (Primary) *ACDC* of the DAG formed by the set of chained ACDCs so disclosed.
 
-In an *issuance exchange*, when the *origin issuance* has an *Issuee*, the *Disclosee* MAY also be the *origin issuance's* *Issuee*.
+In an *issuance exchange*, when the *origin* ACDC has an *Issuee*, the *Disclosee* MAY also be the *origin* ACDC's *Issuee*.
 
 
 ## Chain-Link Confidentiality
