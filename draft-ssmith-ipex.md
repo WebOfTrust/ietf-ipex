@@ -198,7 +198,7 @@ protocol can be designed and analyzed to minimize and mitigate attack mechanisms
 The second is convenience. A standard simple protocol is easier to implement,
 support, update, understand, and adopt. The tooling is more consistent.
 
-This IPEX {{IPEX-ID}} protocol leverages important features of ACDCs and ancillary protocols such as CESR {{CESR-ID}}, SAIDs {{SAID_ID}}, and CESR-Proofs {{Proof-ID}} as well as Ricardian contracts {{RC}} and graduated disclosure (partial, selective, full) to enable contractually protected disclosure. Contractually protected disclosure includes both chain-link confidential {{CLC}} and contingent disclosure {{ACDC-ID}}.
+This IPEX {{IPEX-ID}} protocol leverages important features of ACDCs and ancillary protocols such as CESR {{CESR-ID}}, SAIDs {{SAID-ID}}, and CESR-Proofs {{Proof-ID}} as well as Ricardian contracts {{RC}} and graduated disclosure (partial, selective, full) to enable contractually protected disclosure. Contractually protected disclosure includes both chain-link confidential {{CLC}} and contingent disclosure {{ACDC-ID}}.
 
 
 
