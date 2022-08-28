@@ -221,7 +221,7 @@ TODO Introduction
 
 
 *Issuance*
-: Concretely defined by an ACDC {ACDC_ID).
+: Concretely defined by an ACDC {ACDC-ID}.
 
 *Issuer*
 : Issuance is *issued by* the *Issuer*. The *Issuer* identifier (AID) appears in the top level of the ACDC.
