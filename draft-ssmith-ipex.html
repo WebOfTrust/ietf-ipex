@@ -1243,45 +1243,48 @@ support, update, understand, and adopt. The tooling is more consistent.<a href="
         <dd style="margin-left: 1.5em" id="section-2-1.2">
           <p id="section-2-1.2.1">a disclosure of one or more <strong><em>issuances</em></strong>* between a <strong><em>Discloser</em></strong>* and a <strong><em>Disclosee</em></strong>*.<a href="#section-2-1.2.1" class="pilcrow">¶</a></p>
 </dd>
-        <dd class="break"></dd>
-<dt id="section-2-1.3">Discloser</dt>
-        <dd style="margin-left: 1.5em" id="section-2-1.4">
-          <p id="section-2-1.4.1">Disclosure is <em>disclosed by</em> the <em>Discloser</em>.<a href="#section-2-1.4.1" class="pilcrow">¶</a></p>
+      <dd class="break"></dd>
+</dl>
+<p id="section-2-2">A presentation exchange is the process by which authenticatable information may be exchanged between two parties, namely, the <em>Discloser</em> and <em>Disclosee</em>.<a href="#section-2-2" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-2-3">
+        <dt id="section-2-3.1">Discloser</dt>
+        <dd style="margin-left: 1.5em" id="section-2-3.2">
+          <p id="section-2-3.2.1">Disclosure is <em>disclosed by</em> the <em>Discloser</em>.<a href="#section-2-3.2.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-1.5">Disclosee</dt>
-        <dd style="margin-left: 1.5em" id="section-2-1.6">
-          <p id="section-2-1.6.1">Disclosure is <em>disclosed to</em> the <em>Disclosee</em>.<a href="#section-2-1.6.1" class="pilcrow">¶</a></p>
+<dt id="section-2-3.3">Disclosee</dt>
+        <dd style="margin-left: 1.5em" id="section-2-3.4">
+          <p id="section-2-3.4.1">Disclosure is <em>disclosed to</em> the <em>Disclosee</em>.<a href="#section-2-3.4.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-1.7">Issuance</dt>
-        <dd style="margin-left: 1.5em" id="section-2-1.8">
-          <p id="section-2-1.8.1">Concretely defined by an ACDC <span>[<a href="#ACDC-ID" class="xref">ACDC-ID</a>]</span>.<a href="#section-2-1.8.1" class="pilcrow">¶</a></p>
+<dt id="section-2-3.5">Issuance</dt>
+        <dd style="margin-left: 1.5em" id="section-2-3.6">
+          <p id="section-2-3.6.1">Concretely defined by an ACDC <span>[<a href="#ACDC-ID" class="xref">ACDC-ID</a>]</span>.<a href="#section-2-3.6.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-1.9">Issuer</dt>
-        <dd style="margin-left: 1.5em" id="section-2-1.10">
-          <p id="section-2-1.10.1">Issuance is <em>issued by</em> the <em>Issuer</em>. The <em>Issuer</em> identifier (AID) appears in the top level of the ACDC.<a href="#section-2-1.10.1" class="pilcrow">¶</a></p>
+<dt id="section-2-3.7">Issuer</dt>
+        <dd style="margin-left: 1.5em" id="section-2-3.8">
+          <p id="section-2-3.8.1">Issuance is <em>issued by</em> the <em>Issuer</em>. The <em>Issuer</em> identifier (AID) appears in the top level of the ACDC.<a href="#section-2-3.8.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-1.11">Issuee</dt>
-        <dd style="margin-left: 1.5em" id="section-2-1.12">
-          <p id="section-2-1.12.1">Issuance is <em>issued to</em> the <em>Issuee</em>. The <em>Issuee</em> identifier (AID) when present appears at the top level of the attribute section or in the attribute list at the top level of the attribute aggregate section of the AID.<a href="#section-2-1.12.1" class="pilcrow">¶</a></p>
+<dt id="section-2-3.9">Issuee</dt>
+        <dd style="margin-left: 1.5em" id="section-2-3.10">
+          <p id="section-2-3.10.1">Issuance is optionally <em>issued to</em> the <em>Issuee</em>. When present, the <em>Issuee</em> identifier (AID)  appears at the top level of the attribute section or in the attribute list at the top level of the attribute aggregate section of the AID.<a href="#section-2-3.10.1" class="pilcrow">¶</a></p>
 </dd>
       <dd class="break"></dd>
 </dl>
-<p id="section-2-2">Each <em>issuance</em> Must have an <em>Issuer</em> and May have an <em>Issuee</em>.<a href="#section-2-2" class="pilcrow">¶</a></p>
-<p id="section-2-3">The set of <em>issuances</em> (ACDCs) so disclosed in a <em>presentation exchange</em> <span class="bcp14">MUST</span> be chained. This set of chained <em>issuances</em> define a directed acyclic graph (DAG) that <span class="bcp14">MUST</span> have at least one vertex and <span class="bcp14">MAY</span> have zero or more edges pointing to other vertices.<a href="#section-2-3" class="pilcrow">¶</a></p>
-<p id="section-2-4">Each <em>issuance</em> (ACDC) itself defines a graph fragment consisting of one vertex and zero or more directed edges. Each directed edge contained in an <em>issuance</em> points to a vertex contained in another <em>issuance</em>. The <em>issuance</em> that contains the origin vertex of the DAG is called the <em>origin</em> or <em>primary</em> <em>issuance</em> (ACDC) of the <em>presentation exchange</em>.<a href="#section-2-4" class="pilcrow">¶</a></p>
-<p id="section-2-5">The disclosure performed by a presentation exchange <span class="bcp14">MAY</span> be <em>graduated</em> and <span class="bcp14">MAY</span> be <em>contractually protected</em>.<a href="#section-2-5" class="pilcrow">¶</a></p>
-<span class="break"></span><dl class="dlParallel" id="section-2-6">
-        <dt id="section-2-6.1">Issuance Exchange</dt>
-        <dd style="margin-left: 1.5em" id="section-2-6.2">
-          <p id="section-2-6.2.1">A special case of a <em>presentation exchange</em> where the <em>Discloser</em> is the <em>Issuer</em> of the <em>origin</em> (Primary) <em>issuance</em> (ACDC) of the DAG formed by the set of chained <em>issuances</em> so disclosed.<a href="#section-2-6.2.1" class="pilcrow">¶</a></p>
+<p id="section-2-4">Each <em>issuance</em> Must have an <em>Issuer</em> and May have an <em>Issuee</em>.<a href="#section-2-4" class="pilcrow">¶</a></p>
+<p id="section-2-5">The set of <em>issuances</em> (ACDCs) so disclosed in a <em>presentation exchange</em> <span class="bcp14">MUST</span> be chained. This set of chained <em>issuances</em> define a directed acyclic graph (DAG) that <span class="bcp14">MUST</span> have at least one vertex and <span class="bcp14">MAY</span> have zero or more edges pointing to other vertices.<a href="#section-2-5" class="pilcrow">¶</a></p>
+<p id="section-2-6">Each <em>issuance</em> (ACDC) itself defines a graph fragment consisting of one vertex and zero or more directed edges. Each directed edge contained in an <em>issuance</em> points to a vertex contained in another <em>issuance</em>. The <em>issuance</em> that contains the origin vertex of the DAG is called the <em>origin</em> or <em>primary</em> <em>issuance</em> (ACDC) of the <em>presentation exchange</em>.<a href="#section-2-6" class="pilcrow">¶</a></p>
+<p id="section-2-7">The disclosure performed by a presentation exchange <span class="bcp14">MAY</span> be <em>graduated</em> and <span class="bcp14">MAY</span> be <em>contractually protected</em>.<a href="#section-2-7" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-2-8">
+        <dt id="section-2-8.1">Issuance Exchange</dt>
+        <dd style="margin-left: 1.5em" id="section-2-8.2">
+          <p id="section-2-8.2.1">A special case of a <em>presentation exchange</em> where the <em>Discloser</em> is the <em>Issuer</em> of the <em>origin</em> (Primary) <em>issuance</em> (ACDC) of the DAG formed by the set of chained <em>issuances</em> so disclosed.<a href="#section-2-8.2.1" class="pilcrow">¶</a></p>
 </dd>
       <dd class="break"></dd>
 </dl>
-<p id="section-2-7">In an <em>issuance exchange</em>, when the <em>origin issuance</em> has an <em>Issuee</em>, the <em>Disclosee</em> <span class="bcp14">MAY</span> also be the <em>origin issuance's</em> <em>Issuee</em>.<a href="#section-2-7" class="pilcrow">¶</a></p>
+<p id="section-2-9">In an <em>issuance exchange</em>, when the <em>origin issuance</em> has an <em>Issuee</em>, the <em>Disclosee</em> <span class="bcp14">MAY</span> also be the <em>origin issuance's</em> <em>Issuee</em>.<a href="#section-2-9" class="pilcrow">¶</a></p>
 <div id="chain-link-confidentiality">
 <section id="section-2.1">
         <h3 id="name-chain-link-confidentiality">

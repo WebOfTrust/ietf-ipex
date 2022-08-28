@@ -113,6 +113,10 @@ Table of Contents
    Presentation Exchange  a disclosure of one or more *_issuances_**
       between a *_Discloser_** and a *_Disclosee_**.
 
+   A presentation exchange is the process by which authenticatable
+   information may be exchanged between two parties, namely, the
+   _Discloser_ and _Disclosee_.
+
    Discloser  Disclosure is _disclosed by_ the _Discloser_.
 
    Disclosee  Disclosure is _disclosed to_ the _Disclosee_.
@@ -122,10 +126,10 @@ Table of Contents
    Issuer  Issuance is _issued by_ the _Issuer_. The _Issuer_ identifier
       (AID) appears in the top level of the ACDC.
 
-   Issuee  Issuance is _issued to_ the _Issuee_. The _Issuee_ identifier
-      (AID) when present appears at the top level of the attribute
-      section or in the attribute list at the top level of the attribute
-      aggregate section of the AID.
+   Issuee  Issuance is optionally _issued to_ the _Issuee_. When
+      present, the _Issuee_ identifier (AID) appears at the top level of
+      the attribute section or in the attribute list at the top level of
+      the attribute aggregate section of the AID.
 
    Each _issuance_ Must have an _Issuer_ and May have an _Issuee_.
 
