@@ -29,7 +29,28 @@ author:
 
 normative:
 
+  IPEX-ID:
+    target: https://github.com/WebOfTrust/ietf-oobi
+    title: IETF IPEX (Issuance and Presentation EXchange) Prototocol Internet Draft
+    author:
+      -
+        ins: S. Smith
+        name: Samuel M. Smith
+        org: ProSapien LLC
+      -
+        name: Phil Feairheller
+        organization: GLEIF
+        email: Philip.Feairheller@gleif.org
+    date: 2022
 
+  ACDC-ID:
+    target: https://github.com/trustoverip/tswg-acdc-specification
+    title: IETF ACDC (Authentic Chained Data Containers) Internet Draft
+    author:
+      ins: S. Smith
+      name: Samuel M. Smith
+      org: ProSapien LLC
+    date: 2022
 
   JSON:
     target: https://www.json.org/json-en.html
