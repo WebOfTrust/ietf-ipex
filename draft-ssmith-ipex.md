@@ -222,7 +222,7 @@ Disclosee
 : A ACDC in a disclosure is *disclosed to* the *Disclosee*.
 
 ACDC
-: Type of issuance concretely defined by the ACDC specification {{ACDC-ID}}.
+: Type of data as issuance concretely defined by the ACDC specification {{ACDC-ID}}.
 
 Issuer
 : An *ACDC* is *issued by* the *Issuer*. The *Issuer* identifier (AID) appears in the top level of the ACDC.
