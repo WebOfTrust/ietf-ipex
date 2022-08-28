@@ -52,6 +52,69 @@ normative:
       org: ProSapien LLC
     date: 2022
 
+  OOBI-ID:
+    target: https://github.com/WebOfTrust/ietf-oobi
+    title: IETF OOBI (Out-Of-Band-Introduction) Internet Draft
+    author:
+      ins: S. Smith
+      name: Samuel M. Smith
+      org: ProSapien LLC
+    date: 2022
+
+  KERI-ID:
+    target: https://github.com/WebOfTrust/ietf-keri
+    title: IETF KERI (Key Event Receipt Infrastructure) Internet Draft
+    author:
+      ins: S. Smith
+      name: Samuel M. Smith
+      org: ProSapien LLC
+    date: 2022
+
+  SAID-ID:
+    target: https://github.com/WebOfTrust/ietf-said
+    title: IETF SAID (Self-Addressing IDentifier) Internet Draft
+    author:
+      ins: S. Smith
+      name: Samuel M. Smith
+      org: ProSapien LLC
+    date: 2022
+
+  CESR-ID:
+    target: https://github.com/WebOfTrust/ietf-cesr
+    title: IETF CESR (Composable Event Streaming Representation) Internet Draft
+    author:
+      ins: S. Smith
+      name: Samuel M. Smith
+      org: ProSapien LLC
+    date: 2022
+
+  PTEL-ID:
+    target: https://github.com/WebOfTrust/ietf-ptel
+    title: IETF PTEL (Public Transaction Event Log) Internet Draft
+    author:
+      ins: P. Feairheller
+      name: Phil Feairheller
+      org: GLEIF
+    date: 2022
+
+  Proof-ID:
+    target: https://github.com/WebOfTrust/ietf-cesr-proof
+    title: IETF CESR-Proof Internet Draft
+    author:
+      ins: P. Feairheller
+      name: Phil Feairheller
+      org: GLEIF
+    date: 2022
+
+  DIDK-ID:
+    target: https://github.com/WebOfTrust/ietf-did-keri
+    title: IETF DID-KERI Internet Draft
+    author:
+      ins: P. Feairheller
+      name: Phil Feairheller
+      org: GLEIF
+    date: 2022
+
   JSON:
     target: https://www.json.org/json-en.html
     title: JavaScript Object Notation Delimeters
@@ -108,7 +171,6 @@ informative:
     target: https://github.com/SmithSamuelM/Papers/blob/master/whitepapers/Identity-System-Essentials.pdf
     title: Identity System Essentials
 
-
   RC:
     target: https://en.wikipedia.org/wiki/Ricardian_contract
     title: Ricardian Contract
@@ -135,6 +197,7 @@ protocol can be designed and analyzed to minimize and mitigate attack mechanisms
 The second is convenience. A standard simple protocol is easier to implement,
 support, update, understand, and adopt. The tooling is more consistent.
 
+This IPEX {{IPEX-ID}} protocol leverages important features of ACDCs and ancillary protocols such as CESR {{CESR-ID}}, SAIDs {{SAID-ID}}, and CESR-Proofs {{Proof-ID}} as well as Ricardian contracts {{RC}} and graduated disclosure (partial, selective, full) to enable contractually protected disclosure. Contractually protected disclosure includes both chain-link confidential {{CLC}} and contingent disclosure {{ACDC-ID}}.
 
 
 
