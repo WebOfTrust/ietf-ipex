@@ -210,37 +210,6 @@ TODO Introduction
 
 # Terminology
 
-*Presentation Exchange*
-: a disclosure of one or more ***issuances**** between a ***Discloser**** and a ***Disclosee****.
-
-*Discloser*
-: Disclosure is *disclosed by* the *Discloser*.
-
-*Disclosee*
-: Disclosure is *disclosed to* the *Disclosee*.
-
-
-*Issuance*
-: Concretely defined by an ACDC {ACDC-ID}.
-
-*Issuer*
-: Issuance is *issued by* the *Issuer*. The *Issuer* identifier (AID) appears in the top level of the ACDC.
-
-*Issuee*
-: Issuance is *issued to* the *Issuee*. The *Issuee* identifier (AID) when present appears at the top level of the attribute section or in the attribute list at the top level of the attribute aggregate section of the AID.
-
-Each *issuance* Must have an *Issuer* and May have an *Issuee*.
-
-The set of *issuances* (ACDCs) so disclosed in a *presentation exchange* MUST be chained. This set of chained *issuances* define a directed acyclic graph (DAG) that MUST have at least one vertex and MAY have zero or more edges pointing to other vertices.
-
-Each *issuance* (ACDC) itself defines a graph fragment consisting of one vertex and zero or more directed edges. Each directed edge contained in an *issuance* points to a vertex contained in another *issuance*. The *issuance* that contains the origin vertex of the DAG is called the *origin* or *primary* *issuance* (ACDC) of the *presentation exchange*.
-
-The disclosure performed by a presentation exchange MAY be *graduated* and MAY be *contractually protected*.
-
-*Issuance Exchange*
-: A special case of a *presentation exchange* where the *Discloser* is the *Issuer* of the *origin* (Primary) *issuance* (ACDC) of the DAG formed by the set of chained *issuances* so disclosed.
-
-In an *issuance exchange*, when the *origin issuance* has an *Issuee*, the *Disclosee* MAY also be the *origin issuance's* *Issuee*.
 
 
 ## Chain-Link Confidentiality
