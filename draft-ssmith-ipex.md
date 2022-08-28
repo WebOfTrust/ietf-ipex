@@ -213,6 +213,8 @@ TODO Introduction
 Presentation Exchange
 : a disclosure of one or more ***issuances**** between a ***Discloser**** and a ***Disclosee****.
 
+A presentation exchange is the process by which authenticatable information may be exchanged between two parties, namely, the *Discloser* and *Disclosee*.
+
 Discloser
 : Disclosure is *disclosed by* the *Discloser*.
 
@@ -226,7 +228,7 @@ Issuer
 : Issuance is *issued by* the *Issuer*. The *Issuer* identifier (AID) appears in the top level of the ACDC.
 
 Issuee
-: Issuance is *issued to* the *Issuee*. The *Issuee* identifier (AID) when present appears at the top level of the attribute section or in the attribute list at the top level of the attribute aggregate section of the AID.
+: Issuance is optionally *issued to* the *Issuee*. When present, the *Issuee* identifier (AID)  appears at the top level of the attribute section or in the attribute list at the top level of the attribute aggregate section of the AID.
 
 Each *issuance* Must have an *Issuer* and May have an *Issuee*.
 
