@@ -29,7 +29,7 @@ author:
 
 normative:
 
-  IPEX_ID:
+  IPEX-ID:
     target: https://github.com/WebOfTrust/ietf-oobi
     title: IETF IPEX (Issuance and Presentation EXchange) Prototocol Internet Draft
     author:
@@ -43,7 +43,7 @@ normative:
         email: Philip.Feairheller@gleif.org
     date: 2022
 
-  ACDC_ID:
+  ACDC-ID:
     target: https://github.com/trustoverip/tswg-acdc-specification
     title: IETF ACDC (Authentic Chained Data Containers) Internet Draft
     author:
@@ -52,7 +52,7 @@ normative:
       org: ProSapien LLC
     date: 2022
 
-  OOBI_ID:
+  OOBI-ID:
     target: https://github.com/WebOfTrust/ietf-oobi
     title: IETF OOBI (Out-Of-Band-Introduction) Internet Draft
     author:
@@ -61,7 +61,7 @@ normative:
       org: ProSapien LLC
     date: 2022
 
-  KERI_ID:
+  KERI-ID:
     target: https://github.com/WebOfTrust/ietf-keri
     title: IETF KERI (Key Event Receipt Infrastructure) Internet Draft
     author:
@@ -70,7 +70,7 @@ normative:
       org: ProSapien LLC
     date: 2022
 
-  SAID_ID:
+  SAID-ID:
     target: https://github.com/WebOfTrust/ietf-said
     title: IETF SAID (Self-Addressing IDentifier) Internet Draft
     author:
@@ -79,7 +79,7 @@ normative:
       org: ProSapien LLC
     date: 2022
 
-  CESR_ID:
+  CESR-ID:
     target: https://github.com/WebOfTrust/ietf-cesr
     title: IETF CESR (Composable Event Streaming Representation) Internet Draft
     author:
@@ -88,7 +88,7 @@ normative:
       org: ProSapien LLC
     date: 2022
 
-  PTEL_ID:
+  PTEL-ID:
     target: https://github.com/WebOfTrust/ietf-ptel
     title: IETF PTEL (Public Transaction Event Log) Internet Draft
     author:
@@ -97,7 +97,7 @@ normative:
       org: GLEIF
     date: 2022
 
-  Proof_ID:
+  Proof-ID:
     target: https://github.com/WebOfTrust/ietf-cesr-proof
     title: IETF CESR-Proof Internet Draft
     author:
@@ -106,7 +106,7 @@ normative:
       org: GLEIF
     date: 2022
 
-  DIDK_ID:
+  DIDK-ID:
     target: https://github.com/WebOfTrust/ietf-did-keri
     title: IETF DID-KERI Internet Draft
     author:
@@ -171,7 +171,6 @@ informative:
     target: https://github.com/SmithSamuelM/Papers/blob/master/whitepapers/Identity-System-Essentials.pdf
     title: Identity System Essentials
 
-
   RC:
     target: https://en.wikipedia.org/wiki/Ricardian_contract
     title: Ricardian Contract
@@ -184,7 +183,7 @@ informative:
 --- abstract
 
 The Issuance and Presentation Exchange (IPEX) Protocol provides a uniform mechanism
-for the issuance and presentation of ACDCs {{ACDC_ID}} in a securely attributable manner.
+for the issuance and presentation of ACDCs {{ACDC-ID}} in a securely attributable manner.
 A single protocol is able to work for both types of exchanges by recognizing
 that all exchanges (both issuance and presentation) may be modeled as the
 disclosure of information by a Discloser to a Disclosee. The difference between
@@ -198,7 +197,8 @@ protocol can be designed and analyzed to minimize and mitigate attack mechanisms
 The second is convenience. A standard simple protocol is easier to implement,
 support, update, understand, and adopt. The tooling is more consistent.
 
-This IPEX {{IPEX_ID}} protocol leverages important features of ACDCs and ancillary protocols such as CESR {{CESR_ID}}, SAIDs {{SAID_ID}}, and CESR-Proofs {{Proof_ID}} as well as Ricardian contracts {{RC}} and graduated disclosure (partial, selective, full) to enable contractually protected disclosure. Contractually protected disclosure includes both chain-link confidential {{CLC}} and contingent disclosure {{ACDC_ID}}.
+This IPEX {{IPEX-ID}} protocol leverages important features of ACDCs and ancillary protocols such as CESR {{CESR-ID}}, SAIDs {{SAID-ID}}, and CESR-Proofs {{Proof-ID}} as well as Ricardian contracts {{RC}} and graduated disclosure (partial, selective, full) to enable contractually protected disclosure. Contractually protected disclosure includes both chain-link confidential {{CLC}} and contingent disclosure {{ACDC-ID}}.
+
 
 
 
@@ -207,6 +207,15 @@ This IPEX {{IPEX_ID}} protocol leverages important features of ACDCs and ancilla
 # Introduction
 
 TODO Introduction
+
+# Terminology
+
+
+
+## Chain-Link Confidentiality
+
+Disclosures via Presentations Exchanges may be contractually protected by Chain-Link Confidentiality (i.e a Chain-Link Confidential disclosure). The chaining in this case is different from the chaining described above between Issuances in a DAG of chained Issuances. Chain-link confidentiality, in contrast, chains together a sequence of Disclosees. Each Disclosee in the sequence in turn is the Discloser to the next Disclosee. The terms-of-use of the original disclosure as applied to the original Disclosee MUST be applied by each subsequent Discloser to each subsequent Disclosee via each of the subsequent disclosures (presentation exchanges). These terms-of-use typically constrain disclosure to only approved parties, i.e. imbue the chain of disclosures with some degree of confidentiality. These terms-of-use are meant to contractually protect the data rights of the original Issuer or Issuee of the data being disclosed.
+
 
 
 # Exchange Protocol
