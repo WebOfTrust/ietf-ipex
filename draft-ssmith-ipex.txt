@@ -110,6 +110,49 @@ Table of Contents
 
 2.  Terminology
 
+   Presentation Exchange  a disclosure of one or more *_issuances_**
+      between a *_Discloser_** and a *_Disclosee_**.
+
+   Discloser  Disclosure is _disclosed by_ the _Discloser_.
+
+   Disclosee  Disclosure is _disclosed to_ the _Disclosee_.
+
+   Issuance  Concretely defined by an ACDC [ACDC-ID].
+
+   Issuer  Issuance is _issued by_ the _Issuer_. The _Issuer_ identifier
+      (AID) appears in the top level of the ACDC.
+
+   Issuee  Issuance is _issued to_ the _Issuee_. The _Issuee_ identifier
+      (AID) when present appears at the top level of the attribute
+      section or in the attribute list at the top level of the attribute
+      aggregate section of the AID.
+
+   Each _issuance_ Must have an _Issuer_ and May have an _Issuee_.
+
+   The set of _issuances_ (ACDCs) so disclosed in a _presentation
+   exchange_ MUST be chained.  This set of chained _issuances_ define a
+   directed acyclic graph (DAG) that MUST have at least one vertex and
+   MAY have zero or more edges pointing to other vertices.
+
+   Each _issuance_ (ACDC) itself defines a graph fragment consisting of
+   one vertex and zero or more directed edges.  Each directed edge
+   contained in an _issuance_ points to a vertex contained in another
+   _issuance_. The _issuance_ that contains the origin vertex of the DAG
+   is called the _origin_ or _primary_ _issuance_ (ACDC) of the
+   _presentation exchange_.
+
+   The disclosure performed by a presentation exchange MAY be
+   _graduated_ and MAY be _contractually protected_.
+
+   Issuance Exchange  A special case of a _presentation exchange_ where
+      the _Discloser_ is the _Issuer_ of the _origin_ (Primary)
+      _issuance_ (ACDC) of the DAG formed by the set of chained
+      _issuances_ so disclosed.
+
+   In an _issuance exchange_, when the _origin issuance_ has an
+   _Issuee_, the _Disclosee_ MAY also be the _origin issuance's_
+   _Issuee_.
+
 2.1.  Chain-Link Confidentiality
 
    Disclosures via Presentations Exchanges may be contractually
