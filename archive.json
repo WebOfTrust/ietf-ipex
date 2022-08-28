@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-08-25T02:07:44.537662+00:00",
+  "timestamp": "2022-08-28T02:20:53.801468+00:00",
   "repo": "WebOfTrust/ietf-ipex",
   "labels": [
     {
@@ -215,6 +215,34 @@
       "mergedBy": "SmithSamuelM",
       "mergeCommit": {
         "oid": "0c00ce1efc3a0bb18c4927b892bbf07d5de87c9f"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 7,
+      "id": "PR_kwDOHIgzCs496hIv",
+      "title": "updated to include discussion on Issuance proofing",
+      "url": "https://github.com/WebOfTrust/ietf-ipex/pull/7",
+      "state": "MERGED",
+      "author": "SmithSamuelM",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-08-27T22:35:39Z",
+      "updatedAt": "2022-08-27T22:36:12Z",
+      "baseRepository": "WebOfTrust/ietf-ipex",
+      "baseRefName": "main",
+      "baseRefOid": "0c00ce1efc3a0bb18c4927b892bbf07d5de87c9f",
+      "headRepository": "SmithSamuelM/ietf-ipex",
+      "headRefName": "main",
+      "headRefOid": "5dc38f2fed225033d5211535e1c15fd8fd88876a",
+      "closedAt": "2022-08-27T22:36:12Z",
+      "mergedAt": "2022-08-27T22:36:12Z",
+      "mergedBy": "SmithSamuelM",
+      "mergeCommit": {
+        "oid": "e68ee727ae186fb53a778551497ec472e61fb269"
       },
       "comments": [],
       "reviews": []
