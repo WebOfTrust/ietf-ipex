@@ -112,18 +112,18 @@ Table of Contents
 2.  Terminology
 
    Presentation Exchange  An exchange that provides disclosure of one or
-      more ACDCs between a *_Discloser_** and a *_Disclosee_**.
+      more ACDCs between a _Discloser_ and a _Disclosee_.
 
    A presentation exchange is the process by which authenticatable
    information may be exchanged between two parties, namely, the
    _Discloser_ and _Disclosee_.
 
-   Discloser  An ACDC in a disclosure is _disclosed by_ the _Discloser_.
-
-   Disclosee  A ACDC in a disclosure is _disclosed to_ the _Disclosee_.
-
    ACDC  Type of data as issuance concretely defined by the ACDC
       specification [ACDC-ID].
+
+   Discloser  An ACDC in a disclosure is _disclosed by_ the _Discloser_.
+
+   Disclosee  An ACDC in a disclosure is _disclosed to_ the _Disclosee_.
 
    Issuer  An _ACDC_ is _issued by_ the _Issuer_. The _Issuer_
       identifier (AID) appears in the top level of the ACDC.
@@ -133,8 +133,7 @@ Table of Contents
       the attribute section or in the attribute list at the top level of
       the attribute aggregate section of the ACDC.
 
-   Each _ACDC_ is a type of issuance that MUST have an _Issuer_ and MAY
-   have an _Issuee_.
+   Each _ACDC_ MUST have an _Issuer_ and MAY have an _Issuee_.
 
    The set of _ACDCs_ so disclosed in a _presentation exchange_ MUST be
    chained.  This set of chained _ACDCs_ define a directed acyclic graph

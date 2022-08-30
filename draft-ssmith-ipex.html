@@ -1244,25 +1244,25 @@ support, update, understand, and adopt. The tooling is more consistent.<a href="
 <span class="break"></span><dl class="dlParallel" id="section-2-1">
         <dt id="section-2-1.1">Presentation Exchange</dt>
         <dd style="margin-left: 1.5em" id="section-2-1.2">
-          <p id="section-2-1.2.1">An exchange that provides disclosure of one or more ACDCs between a <strong><em>Discloser</em></strong>* and a <strong><em>Disclosee</em></strong>*.<a href="#section-2-1.2.1" class="pilcrow">¶</a></p>
+          <p id="section-2-1.2.1">An exchange that provides disclosure of one or more ACDCs between a <em>Discloser</em> and a <em>Disclosee</em>.<a href="#section-2-1.2.1" class="pilcrow">¶</a></p>
 </dd>
       <dd class="break"></dd>
 </dl>
 <p id="section-2-2">A presentation exchange is the process by which authenticatable information may be exchanged between two parties, namely, the <em>Discloser</em> and <em>Disclosee</em>.<a href="#section-2-2" class="pilcrow">¶</a></p>
 <span class="break"></span><dl class="dlParallel" id="section-2-3">
-        <dt id="section-2-3.1">Discloser</dt>
+        <dt id="section-2-3.1">ACDC</dt>
         <dd style="margin-left: 1.5em" id="section-2-3.2">
-          <p id="section-2-3.2.1">An ACDC in a disclosure is <em>disclosed by</em> the <em>Discloser</em>.<a href="#section-2-3.2.1" class="pilcrow">¶</a></p>
+          <p id="section-2-3.2.1">Type of data as issuance concretely defined by the ACDC specification <span>[<a href="#ACDC-ID" class="xref">ACDC-ID</a>]</span>.<a href="#section-2-3.2.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-3.3">Disclosee</dt>
+<dt id="section-2-3.3">Discloser</dt>
         <dd style="margin-left: 1.5em" id="section-2-3.4">
-          <p id="section-2-3.4.1">A ACDC in a disclosure is <em>disclosed to</em> the <em>Disclosee</em>.<a href="#section-2-3.4.1" class="pilcrow">¶</a></p>
+          <p id="section-2-3.4.1">An ACDC in a disclosure is <em>disclosed by</em> the <em>Discloser</em>.<a href="#section-2-3.4.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
-<dt id="section-2-3.5">ACDC</dt>
+<dt id="section-2-3.5">Disclosee</dt>
         <dd style="margin-left: 1.5em" id="section-2-3.6">
-          <p id="section-2-3.6.1">Type of data as issuance concretely defined by the ACDC specification <span>[<a href="#ACDC-ID" class="xref">ACDC-ID</a>]</span>.<a href="#section-2-3.6.1" class="pilcrow">¶</a></p>
+          <p id="section-2-3.6.1">An ACDC in a disclosure is <em>disclosed to</em> the <em>Disclosee</em>.<a href="#section-2-3.6.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-3.7">Issuer</dt>
@@ -1276,7 +1276,7 @@ support, update, understand, and adopt. The tooling is more consistent.<a href="
 </dd>
       <dd class="break"></dd>
 </dl>
-<p id="section-2-4">Each <em>ACDC</em> is a type of issuance that <span class="bcp14">MUST</span> have an <em>Issuer</em> and <span class="bcp14">MAY</span> have an <em>Issuee</em>.<a href="#section-2-4" class="pilcrow">¶</a></p>
+<p id="section-2-4">Each <em>ACDC</em>  <span class="bcp14">MUST</span> have an <em>Issuer</em> and <span class="bcp14">MAY</span> have an <em>Issuee</em>.<a href="#section-2-4" class="pilcrow">¶</a></p>
 <p id="section-2-5">The set of <em>ACDCs</em> so disclosed in a <em>presentation exchange</em> <span class="bcp14">MUST</span> be chained. This set of chained <em>ACDCs</em> define a directed acyclic graph (DAG) that <span class="bcp14">MUST</span> have at least one vertex and <span class="bcp14">MAY</span> have zero or more edges pointing to other vertices.<a href="#section-2-5" class="pilcrow">¶</a></p>
 <p id="section-2-6">Each <em>ACDC</em> itself defines a graph fragment consisting of one vertex and zero or more directed edges. Each directed edge contained in an <em>ACDC</em> points to a vertex contained in another <em>ACDC</em>. The ACDC that contains the origin vertex of the DAG is called the <em>origin</em> or <em>primary</em> ACDC of the <em>presentation exchange</em>.<a href="#section-2-6" class="pilcrow">¶</a></p>
 <p id="section-2-7">The disclosure performed by a presentation exchange <span class="bcp14">MAY</span> be <em>graduated</em> and <span class="bcp14">MAY</span> be <em>contractually protected</em>.<a href="#section-2-7" class="pilcrow">¶</a></p>
