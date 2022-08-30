@@ -5,8 +5,8 @@
 WG Working Group                                             S. M. Smith
 Internet-Draft                                             ProSapien LLC
 Intended status: Informational                            P. Feairheller
-Expires: 1 March 2023                                              GLEIF
-                                                          28 August 2022
+Expires: 3 March 2023                                              GLEIF
+                                                          30 August 2022
 
 
               Issuance and Presentation Exchange Protocol
@@ -70,7 +70,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 March 2023.
+   This Internet-Draft will expire on 3 March 2023.
 
 Copyright Notice
 
@@ -95,12 +95,13 @@ Table of Contents
      3.1.  Discussion
      3.2.  IPEX Validation
        3.2.1.  Issuer Signing Rules
-   4.  Conventions and Definitions
-   5.  Security Considerations
-   6.  IANA Considerations
-   7.  References
-     7.1.  Normative References
-     7.2.  Informative References
+   4.  Example Most Compact Variant
+   5.  Conventions and Definitions
+   6.  Security Considerations
+   7.  IANA Considerations
+   8.  References
+     8.1.  Normative References
+     8.2.  Informative References
    Acknowledgments
    Authors' Addresses
 
@@ -315,15 +316,14 @@ Table of Contents
 3.2.1.  Issuer Signing Rules
 
    The Issuer MUST provide a signature on the SAID of the most compact
-   form defined by the schema of the ACDC . To restate, when only one
-   variant of the ACDC is defined by the schema, that variant is
-   therefore by defintion the most compact variant.
+   variant defined by the schema of the ACDC.  When more than one
+   variant is defined by the schema via the oneOf composition operator
+   for any top-level field, the most compact variant MUST appear as the
+   first entry in the oneOf list.  When only one variant of each top-
+   level field is defined by the schema, that variant is therefore by
+   defintion the most compact variant.
 
-   When more than one variant is defined by the schema via the oneOf
-   composition operator, the most compact variant MUST appear as the
-   first entry in the oneOf list.
-
-   An iIssuer MAY provide signatures of the SAIDS of other variants, as
+   An Issuer MAY provide signatures of the SAIDS of other variants, as
    well as signatures of the SADs of other variants.
 
    Proof of issuance is provided by disclosing the SAID of the most
@@ -339,7 +339,275 @@ Table of Contents
    verify a different proof of disclosure for each disclosed variant as
    defined above.
 
-4.  Conventions and Definitions
+4.  Example Most Compact Variant
+
+   The following schema supports a compact variant
+
+   {
+     "$id": "E46jrVPTzlSkUPqGGeIZ8a8FWS7a6s4reAXRZOkogZ2A",
+     "$schema": "https://json-schema.org/draft/2020-12/schema",
+     "title": "Public ACDC",
+     "description": "Example JSON Schema Public ACDC.",
+     "credentialType": "PublicACDCExample",
+     "type": "object",
+      "required":
+     [
+       "v",
+       "d",
+       "i",
+       "ri",
+       "s",
+       "a",
+       "e",
+       "r"
+     ],
+     "properties":
+     {
+       "v":
+       {
+         "description": "ACDC version string",
+         "type": "string"
+       },
+       "d":
+       {
+        "description": "ACDC SAID",
+         "type": "string"
+       },
+       "i":
+       {
+         "description": "Issuer AID",
+         "type": "string"
+       },
+       "ri":
+       {
+         "description": "credential status registry AID",
+         "type": "string"
+       },
+       "s":
+       {
+         "description": "schema section",
+         "oneOf":
+         [
+           {
+             "description": "schema section SAID",
+             "type": "string"
+           },
+           {
+             "description": "schema detail",
+             "type": "object"
+           },
+         ]
+       },
+       "a":
+       {
+         "description": "attribute section",
+         "oneOf":
+         [
+           {
+             "description": "attribute section SAID",
+             "type": "string"
+           },
+           {
+             "description": "attribute detail",
+             "type": "object",
+             "required":
+             [
+               "d",
+               "i",
+               "score",
+               "name"
+             ],
+             "properties":
+             {
+               "d":
+               {
+                 "description": "attribute section SAID",
+                 "type": "string"
+               },
+               "i":
+               {
+                 "description": "Issuee AID",
+                 "type": "string"
+               },
+               "score":
+               {
+                 "description": "test score",
+                 "type": "integer"
+               },
+               "name":
+               {
+                 "description": "test taker full name",
+                 "type": "string"
+               }
+             },
+             "additionalProperties": false,
+           }
+         ]
+       },
+       "e":
+       {
+         "description": "edge section",
+         "oneOf":
+         [
+           {
+             "description": "edge section SAID",
+             "type": "string"
+           },
+           {
+             "description": "edge detail",
+             "type": "object",
+             "required":
+             [
+               "d",
+               "boss"
+             ],
+             "properties":
+             {
+               "d":
+               {
+                 "description": "edge section SAID",
+                 "type": "string"
+               },
+               "boss":
+               {
+                 "description": "boss edge",
+                 "type": "object",
+                 "required":
+                 [
+                   "d",
+                   "n",
+                   's',
+                   "w"
+                 ],
+                 "properties":
+                 {
+                   "d":
+                   {
+                     "description": "edge SAID",
+                     "type": "string"
+                   },
+                   "n":
+                   {
+                     "description": "far node SAID",
+                     "type": "string"
+                   },
+                   "s":
+                   {
+                     "description": "far node schema SAID",
+                     "type": "string",
+                     "const": ""EiheqcywJcnjtJtQIYPvAu6DZAIl3MORH3dCdoFOLe71"
+                   },
+                   "w":
+                   {
+                     "description": "edge weight",
+                     "type": "string"
+                 },
+                 "additionalProperties": false
+               },
+             },
+             "additionalProperties": false
+           }
+         ]
+       },
+       "r":
+       {
+         "description": "rule section",
+         "oneOf":
+         [
+           {
+             "description": "rule section SAID",
+             "type": "string"
+           },
+           {
+             "description": "rule detail",
+             "type": "object",
+             "required":
+             [
+               "d",
+               "warrantyDisclaimer",
+               "liabilityDisclaimer"
+             ],
+             "properties":
+             {
+               "d":
+               {
+                 "description": "edge section SAID",
+                 "type": "string"
+               },
+               "warrantyDisclaimer":
+               {
+                 "description": "warranty disclaimer clause",
+                 "type": "object",
+                 "required":
+                 [
+                   "d",
+                   "l"
+                 ],
+                 "properties":
+                 {
+                   "d":
+                   {
+                     "description": "clause SAID",
+                     "type": "string"
+                   },
+                   "l":
+                   {
+                     "description": "legal language",
+                     "type": "string"
+                   }
+                 },
+                 "additionalProperties": false
+               },
+               "liabilityDisclaimer":
+               {
+                 "description": "liability disclaimer clause",
+                 "type": "object",
+                 "required":
+                 [
+                   "d",
+                   "l"
+                 ],
+                 "properties":
+                 {
+                   "d":
+                   {
+                     "description": "clause SAID",
+                     "type": "string"
+                   },
+                   "l":
+                   {
+                     "description": "legal language",
+                     "type": "string"
+                   }
+                 },
+                 "additionalProperties": false
+               }
+             },
+             "additionalProperties": false
+           }
+         ]
+       }
+     },
+     "additionalProperties": false
+   }
+
+   The following JSON field map serialization satisfies the rules for
+   most compact variant of the schema above.
+
+   {
+     "v":  "ACDC10JSON00011c_",
+     "d":  "EBdXt3gIXOf2BBWNHdSXCJnFJL5OuQPyM5K0neuniccM",
+     "i":  "did:keri:EmkPreYpZfFk66jpf3uFv7vklXKhzBrAqjsKAn2EDIPM",
+     "ri": "did:keri:EymRy7xMwsxUelUauaXtMxTfPAMPAI6FkekwlOjkggt",
+     "s":  "E46jrVPTzlSkUPqGGeIZ8a8FWS7a6s4reAXRZOkogZ2A",
+     "a":  "EgveY4-9XgOcLxUderzwLIr9Bf7V_NHwY1lkFrn9y2PY",
+     "e":  "ERH3dCdoFOLe71iheqcywJcnjtJtQIYPvAu6DZIl3MOA",
+     "r":  "Ee71iheqcywJcnjtJtQIYPvAu6DZIl3MORH3dCdoFOLB"
+   }
+
+   The Issuer signs the SAID, d field value of the field map above.
+
+5.  Conventions and Definitions
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
@@ -347,17 +615,17 @@ Table of Contents
    BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
-5.  Security Considerations
+6.  Security Considerations
 
    TODO Security
 
-6.  IANA Considerations
+7.  IANA Considerations
 
    This document has no IANA actions.
 
-7.  References
+8.  References
 
-7.1.  Normative References
+8.1.  Normative References
 
    [ACDC-ID]  Smith, S., "IETF ACDC (Authentic Chained Data Containers)
               Internet Draft", 2022,
@@ -427,7 +695,7 @@ Table of Contents
               Internet Draft", 2022,
               <https://github.com/WebOfTrust/ietf-said>.
 
-7.2.  Informative References
+8.2.  Informative References
 
    [CLC]      "Chain-Link Confidentiality", n.d.,
               <https://papers.ssrn.com/sol3/
