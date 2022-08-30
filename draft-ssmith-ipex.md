@@ -287,6 +287,11 @@ For example, in the bulk issuance of an ACDC, the Issuer only signs the blinded 
 
 The Issuer MUST provide a signature on the SAID of the most compact variant defined by the schema of the ACDC. When more than one variant is defined by the schema via the oneOf composition operator for any top-level field, the most compact variant MUST appear as the first entry in the oneOf list. When only one variant of each top-level field is defined by the schema, that variant is therefore by defintion the most compact variant.
 
+The different variants of an ACDC form a hash tree (using SAIDs) that is analogous to a Merkle Tree.
+Signing the top-level SAID of the compact version of the ACDC is equivalent to signing the Merkle Root of a Merkle Tree.
+Different variants of an ACDC (SADs with SAIDs) correspond to different paths through a Merkle tree.
+The process of verifying that  a SAD via its SAID of a section is included in a schema authorized variant down from the  top-level SAID is equivalent to a Merkle Tree proof of inclusion along a path in the Merkel Tree down from its Root.
+This allows a single signature to provide proof of Issuance of the presentation of any schema authorized variants of the ACDC.
 
 
 
