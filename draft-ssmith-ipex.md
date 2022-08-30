@@ -285,11 +285,12 @@ For example, in the bulk issuance of an ACDC, the Issuer only signs the blinded 
 
 ### Issuer Signing Rules
 
-The Issuer MUST provide a signature on the SAID of the most compact form defined by the schema of the ACDC . To restate, when only one variant of the ACDC is defined by the schema, that variant is therefore by defintion the most compact variant.
+The Issuer MUST provide a signature on the SAID of the most compact variant defined by the schema of the ACDC. When more than one variant is defined by the schema via the oneOf composition operator for any top-level field, the most compact variant MUST appear as the first entry in the oneOf list. When only one variant of each top-level field is defined by the schema, that variant is therefore by defintion the most compact variant.
 
-When more than one variant is defined by the schema via the oneOf composition operator, the most compact variant MUST appear as the first entry in the oneOf list.
 
-An iIssuer MAY provide signatures of the SAIDS of other variants, as well as signatures of the SADs of other variants.
+
+
+An Issuer MAY provide signatures of the SAIDS of other variants, as well as signatures of the SADs of other variants.
 
 Proof of issuance is provided by disclosing the SAID of the most compact variant and the signature by the Issuer on that SAID.
 
@@ -297,6 +298,277 @@ Proof of disclosure is provided by disclosing the SAD of the most compact varian
 
 Thus for any disclosed variant of an ACDC, the Disclosee need only verify only one proof of issuance as defined above and may need to verify a different proof of disclosure for each disclosed variant as defined above.
 
+
+# Example Most Compact Variant
+
+The following schema supports a compact variant
+
+~~~json
+{
+  "$id": "E46jrVPTzlSkUPqGGeIZ8a8FWS7a6s4reAXRZOkogZ2A",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public ACDC",
+  "description": "Example JSON Schema Public ACDC.",
+  "credentialType": "PublicACDCExample",
+  "type": "object",
+   "required":
+  [
+    "v",
+    "d",
+    "i",
+    "ri",
+    "s",
+    "a",
+    "e",
+    "r"
+  ],
+  "properties":
+  {
+    "v":
+    {
+      "description": "ACDC version string",
+      "type": "string"
+    },
+    "d":
+    {
+     "description": "ACDC SAID",
+      "type": "string"
+    },
+    "i":
+    {
+      "description": "Issuer AID",
+      "type": "string"
+    },
+    "ri":
+    {
+      "description": "credential status registry AID",
+      "type": "string"
+    },
+    "s":
+    {
+      "description": "schema section",
+      "oneOf":
+      [
+        {
+          "description": "schema section SAID",
+          "type": "string"
+        },
+        {
+          "description": "schema detail",
+          "type": "object"
+        },
+      ]
+    },
+    "a":
+    {
+      "description": "attribute section",
+      "oneOf":
+      [
+        {
+          "description": "attribute section SAID",
+          "type": "string"
+        },
+        {
+          "description": "attribute detail",
+          "type": "object",
+          "required":
+          [
+            "d",
+            "i",
+            "score",
+            "name"
+          ],
+          "properties":
+          {
+            "d":
+            {
+              "description": "attribute section SAID",
+              "type": "string"
+            },
+            "i":
+            {
+              "description": "Issuee AID",
+              "type": "string"
+            },
+            "score":
+            {
+              "description": "test score",
+              "type": "integer"
+            },
+            "name":
+            {
+              "description": "test taker full name",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+        }
+      ]
+    },
+    "e":
+    {
+      "description": "edge section",
+      "oneOf":
+      [
+        {
+          "description": "edge section SAID",
+          "type": "string"
+        },
+        {
+          "description": "edge detail",
+          "type": "object",
+          "required":
+          [
+            "d",
+            "boss"
+          ],
+          "properties":
+          {
+            "d":
+            {
+              "description": "edge section SAID",
+              "type": "string"
+            },
+            "boss":
+            {
+              "description": "boss edge",
+              "type": "object",
+              "required":
+              [
+                "d",
+                "n",
+                's',
+                "w"
+              ],
+              "properties":
+              {
+                "d":
+                {
+                  "description": "edge SAID",
+                  "type": "string"
+                },
+                "n":
+                {
+                  "description": "far node SAID",
+                  "type": "string"
+                },
+                "s":
+                {
+                  "description": "far node schema SAID",
+                  "type": "string",
+                  "const": ""EiheqcywJcnjtJtQIYPvAu6DZAIl3MORH3dCdoFOLe71"
+                },
+                "w":
+                {
+                  "description": "edge weight",
+                  "type": "string"
+              },
+              "additionalProperties": false
+            },
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "r":
+    {
+      "description": "rule section",
+      "oneOf":
+      [
+        {
+          "description": "rule section SAID",
+          "type": "string"
+        },
+        {
+          "description": "rule detail",
+          "type": "object",
+          "required":
+          [
+            "d",
+            "warrantyDisclaimer",
+            "liabilityDisclaimer"
+          ],
+          "properties":
+          {
+            "d":
+            {
+              "description": "edge section SAID",
+              "type": "string"
+            },
+            "warrantyDisclaimer":
+            {
+              "description": "warranty disclaimer clause",
+              "type": "object",
+              "required":
+              [
+                "d",
+                "l"
+              ],
+              "properties":
+              {
+                "d":
+                {
+                  "description": "clause SAID",
+                  "type": "string"
+                },
+                "l":
+                {
+                  "description": "legal language",
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "liabilityDisclaimer":
+            {
+              "description": "liability disclaimer clause",
+              "type": "object",
+              "required":
+              [
+                "d",
+                "l"
+              ],
+              "properties":
+              {
+                "d":
+                {
+                  "description": "clause SAID",
+                  "type": "string"
+                },
+                "l":
+                {
+                  "description": "legal language",
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}
+~~~
+
+The following JSON field map serialization satisfies the rules for most compact variant of the schema above.
+
+~~~json
+{
+  "v":  "ACDC10JSON00011c_",
+  "d":  "EBdXt3gIXOf2BBWNHdSXCJnFJL5OuQPyM5K0neuniccM",
+  "i":  "did:keri:EmkPreYpZfFk66jpf3uFv7vklXKhzBrAqjsKAn2EDIPM",
+  "ri": "did:keri:EymRy7xMwsxUelUauaXtMxTfPAMPAI6FkekwlOjkggt",
+  "s":  "E46jrVPTzlSkUPqGGeIZ8a8FWS7a6s4reAXRZOkogZ2A",
+  "a":  "EgveY4-9XgOcLxUderzwLIr9Bf7V_NHwY1lkFrn9y2PY",
+  "e":  "ERH3dCdoFOLe71iheqcywJcnjtJtQIYPvAu6DZIl3MOA",
+  "r":  "Ee71iheqcywJcnjtJtQIYPvAu6DZIl3MORH3dCdoFOLB"
+}
+~~~
+
+The Issuer signs the SAID, `d` field value of the field map above.
 
 
 
