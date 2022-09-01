@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-08-30T02:21:17.146132+00:00",
+  "timestamp": "2022-09-01T02:02:23.664395+00:00",
   "repo": "WebOfTrust/ietf-ipex",
   "labels": [
     {
@@ -355,6 +355,90 @@
       "mergedBy": "SmithSamuelM",
       "mergeCommit": {
         "oid": "2ab3f49548dace47f5d7aa5f6ad17a8c6139be10"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 12,
+      "id": "PR_kwDOHIgzCs4-DBmv",
+      "title": "fixed issuer rules added example",
+      "url": "https://github.com/WebOfTrust/ietf-ipex/pull/12",
+      "state": "MERGED",
+      "author": "SmithSamuelM",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-08-30T13:16:21Z",
+      "updatedAt": "2022-08-30T13:19:41Z",
+      "baseRepository": "WebOfTrust/ietf-ipex",
+      "baseRefName": "main",
+      "baseRefOid": "2ab3f49548dace47f5d7aa5f6ad17a8c6139be10",
+      "headRepository": "SmithSamuelM/ietf-ipex",
+      "headRefName": "main",
+      "headRefOid": "e466e7f4ef6794e925f5ec32f687d4a65f351784",
+      "closedAt": "2022-08-30T13:19:41Z",
+      "mergedAt": "2022-08-30T13:19:41Z",
+      "mergedBy": "SmithSamuelM",
+      "mergeCommit": {
+        "oid": "a537c6309ecf33fd5414905e8442c822d6f59896"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 13,
+      "id": "PR_kwDOHIgzCs4-DHaw",
+      "title": "fixed typos",
+      "url": "https://github.com/WebOfTrust/ietf-ipex/pull/13",
+      "state": "MERGED",
+      "author": "SmithSamuelM",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-08-30T13:34:51Z",
+      "updatedAt": "2022-08-30T13:41:32Z",
+      "baseRepository": "WebOfTrust/ietf-ipex",
+      "baseRefName": "main",
+      "baseRefOid": "a537c6309ecf33fd5414905e8442c822d6f59896",
+      "headRepository": "SmithSamuelM/ietf-ipex",
+      "headRefName": "main",
+      "headRefOid": "9bb2309ed1053769d3238bfc41e6b52ebd28ee45",
+      "closedAt": "2022-08-30T13:41:32Z",
+      "mergedAt": "2022-08-30T13:41:32Z",
+      "mergedBy": "SmithSamuelM",
+      "mergeCommit": {
+        "oid": "4a0619ab9db0b373b9a1026bd41a3851fd072c5a"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 14,
+      "id": "PR_kwDOHIgzCs4-D4ok",
+      "title": "Added language on Merkle Tree analogy",
+      "url": "https://github.com/WebOfTrust/ietf-ipex/pull/14",
+      "state": "MERGED",
+      "author": "SmithSamuelM",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2022-08-30T16:19:47Z",
+      "updatedAt": "2022-08-30T17:05:26Z",
+      "baseRepository": "WebOfTrust/ietf-ipex",
+      "baseRefName": "main",
+      "baseRefOid": "4a0619ab9db0b373b9a1026bd41a3851fd072c5a",
+      "headRepository": "SmithSamuelM/ietf-ipex",
+      "headRefName": "main",
+      "headRefOid": "02b930fc514328860a650f850dfd3ea726f9db9b",
+      "closedAt": "2022-08-30T17:05:26Z",
+      "mergedAt": "2022-08-30T17:05:26Z",
+      "mergedBy": "SmithSamuelM",
+      "mergeCommit": {
+        "oid": "1ebe80325c0dbf43969be0f36b50f7afd3d5fbd4"
       },
       "comments": [],
       "reviews": []
