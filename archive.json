@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-07-06T01:43:49.327517+00:00",
+  "timestamp": "2023-08-01T01:22:49.244200+00:00",
   "repo": "WebOfTrust/ietf-ipex",
   "labels": [
     {
@@ -457,6 +457,32 @@
       "mergeCommit": {
         "oid": "1ebe80325c0dbf43969be0f36b50f7afd3d5fbd4"
       },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 16,
+      "id": "PR_kwDOHIgzCs5W0C72",
+      "title": "adds archival note",
+      "url": "https://github.com/WebOfTrust/ietf-ipex/pull/16",
+      "state": "OPEN",
+      "author": "m00sey",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Due to the proposed move to the Trust over IP Foundation, we should archive this repository.",
+      "createdAt": "2023-07-31T15:18:39Z",
+      "updatedAt": "2023-07-31T15:18:39Z",
+      "baseRepository": "WebOfTrust/ietf-ipex",
+      "baseRefName": "main",
+      "baseRefOid": "1ebe80325c0dbf43969be0f36b50f7afd3d5fbd4",
+      "headRepository": "m00sey/ietf-ipex",
+      "headRefName": "main",
+      "headRefOid": "1c90884b01d167458c8414f664190856fc3fdadb",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
       "comments": [],
       "reviews": []
     }
