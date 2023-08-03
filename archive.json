@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-08-01T01:22:49.244200+00:00",
+  "timestamp": "2023-08-03T01:13:43.174937+00:00",
   "repo": "WebOfTrust/ietf-ipex",
   "labels": [
     {
@@ -47,6 +47,11 @@
       "name": "wontfix",
       "description": "This will not be worked on",
       "color": "ffffff"
+    },
+    {
+      "name": "pending close",
+      "description": "",
+      "color": "903255"
     }
   ],
   "issues": [
@@ -59,12 +64,22 @@
       "author": "jasoncolburne",
       "authorAssociation": "NONE",
       "assignees": [],
-      "labels": [],
+      "labels": [
+        "pending close"
+      ],
       "body": "I believe the statement\r\n\r\n> Therefore, an Issuer commitment via a signature to any variant of ACDC (compact, full, etc) makes a cryptographic commitment to the top-level section fields shared by all variants of that ACDC because the value of a top level section field is either the SAD or the SAID of the SAD of the associated section.\r\n\r\nno longer holds when we introduce nested partial disclosure.\r\n\r\nConsider the case where an issuer signs a fully disclosed, nested, ACDC. During disclosure by the issuee/discloser, unless the discloser discloses all nested SAD, the uncompact/fully disclosed `a` SAID cannot be computed for verification.\r\n\r\nTo solve this, I can, by convention, always sign the most compact variant ACDC SAID during issuance, even if issuing a partially disclosable ACDC with all fields exposed for the issuee/discloser's use. This way any participant can validate, and the part of the ACDC transformation that goes in one direction only (blinding the partially disclosable SAD) kind of leads one to that result. The thing is, during issuance it would be nice to transfer the fully disclosed ACDC to reduce message quantity. But, the signature on the message wouldn't match the ACDC. Is that okay? I mean, I know I can write the code, but it probably isn't specified that way. Originally, I was planning on signing the compact version, sending that over to the recipient and then letting them query the issuer for all the SAD they need via `exn`/`bar` messages. Is this the correct approach? Or (by spec) can I sign the SAID of the compact variant and attach that signature to a fully disclosed ACDC?",
       "createdAt": "2023-07-05T07:23:04Z",
-      "updatedAt": "2023-07-05T07:23:04Z",
+      "updatedAt": "2023-08-01T15:18:30Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "m00sey",
+          "authorAssociation": "MEMBER",
+          "body": "Potentially resolved by https://github.com/trustoverip/tswg-acdc-specification-archived/issues/78 @jasoncolburne ?",
+          "createdAt": "2023-08-01T14:30:54Z",
+          "updatedAt": "2023-08-01T14:30:54Z"
+        }
+      ]
     }
   ],
   "pulls": [
