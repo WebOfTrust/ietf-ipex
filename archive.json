@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-08-06T01:09:00.830702+00:00",
+  "timestamp": "2023-08-10T01:16:11.096455+00:00",
   "repo": "WebOfTrust/ietf-ipex",
   "labels": [
     {
@@ -87,6 +87,22 @@
           "updatedAt": "2023-08-03T07:22:26Z"
         }
       ]
+    },
+    {
+      "number": 17,
+      "id": "I_kwDOHIgzCs5twa2d",
+      "title": "Adding rotation and transfer semantic to credential TEL",
+      "url": "https://github.com/WebOfTrust/ietf-ipex/issues/17",
+      "state": "CLOSED",
+      "author": "pfeairheller",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Transfer semantic will need to add 2 different types, cooperative and non-cooperative.",
+      "createdAt": "2023-08-08T14:15:21Z",
+      "updatedAt": "2023-08-08T14:17:35Z",
+      "closedAt": "2023-08-08T14:17:35Z",
+      "comments": []
     }
   ],
   "pulls": [
